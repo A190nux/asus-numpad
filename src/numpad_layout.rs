@@ -100,12 +100,13 @@ impl NumpadLayout {
     }
 
     pub fn needs_multikey(&self, key: EV_KEY) -> bool {
-        key == EV_KEY::KEY_5
+        key == EV_KEY::KEY_5 || key == EV_KEY::KEY_NUMERIC_POUND
     }
 
     pub fn multikeys(&self, key: EV_KEY) -> [EV_KEY; 2] {
         match key {
             EV_KEY::KEY_5 => [EV_KEY::KEY_LEFTSHIFT, EV_KEY::KEY_5],
+            EV_KEY::KEY_NUMERIC_POUND => [EV_KEY::KEY_LEFTSHIFT, EV_KEY::KEY_3],
             // Safety: We know this method will only be called after
             // needs_multikey returns true
             _ => unsafe { unreachable_unchecked() },
@@ -245,7 +246,7 @@ impl NumpadLayout {
         use EV_KEY::*;
         Self::create(
             vec![
-                vec![KEY_CALC, KEY_KPSLASH, KEY_KPASTERISK, KEY_KPMINUS],
+                vec![KEY_NUMERIC_POUND, KEY_KPSLASH, KEY_KPASTERISK, KEY_KPMINUS],
                 vec![KEY_KP7, KEY_KP8, KEY_KP9, KEY_KPPLUS],
                 vec![KEY_KP4, KEY_KP5, KEY_KP6, KEY_KPPLUS],
                 vec![KEY_KP1, KEY_KP2, KEY_KP3, KEY_KPENTER],
