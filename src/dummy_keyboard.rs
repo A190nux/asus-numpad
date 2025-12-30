@@ -25,7 +25,7 @@ impl DummyKeyboard {
     pub(crate) fn new(layout: &NumpadLayout) -> Result<Self> {
         let dev = UninitDevice::new().context("Unable to create uninit evdev device.")?;
         dev.set_name("asus_numpad");
-        let default_keys = [EV_KEY::KEY_LEFTSHIFT, EV_KEY::KEY_NUMLOCK, EV_KEY::KEY_CALC];
+        let default_keys = [EV_KEY::KEY_LEFTSHIFT, EV_KEY::KEY_NUMLOCK, EV_KEY::KEY_CALC, EV_KEY::KEY_3];
         for key in default_keys {
             dev.enable(EventCode::EV_KEY(key))
                 .with_context(|| format!("Unable to enable key {:?}", key))?;
