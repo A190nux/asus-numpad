@@ -2,6 +2,9 @@
 
 Linux tool to allow using the numpad that is overlayed on various Asus Laptop touchpads.
 
+## Fork Information
+This fork was made to fix the ```GX701``` layout to align more correctly with the laptop model.
+
 ## Features
 This builds upon the work done in [asus-touchpad-numpad-driver](https://github.com/mohamed-badaoui/asus-touchpad-numpad-driver), and adds more goodies that bring it closer to parity with the official Windows driver-
 * Hold to toggle numlock/cycle brightness
