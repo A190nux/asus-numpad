@@ -1,12 +1,12 @@
 [package]
 name = "asus-numpad"
-version = "0.4.1"
-authors = ["iamkroot <kroot.patel@gmail.com>"]
+version = "0.4.2"
+authors = ["iamkroot <kroot.patel@gmail.com>", "A190nux <Aly.Nasr.L190@gmail.com>"]
 edition = "2024"
 rust-version = "1.85"
 description = "Linux app to allow using the numpad that is overlayed on various Asus Laptop touchpads."
 readme = "README.md"
-repository = "https://github.com/iamkroot/asus-numpad"
+repository = "https://github.com/A190nux/asus-numpad"
 keywords = ["asus", "numpad", "touchpad", "driver"]
 categories = ["hardware-support", "os::linux-apis"]
 
